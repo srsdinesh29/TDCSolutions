@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - TDC SOLUTIONS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> <!-- Professional Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"> <!-- Open Sans Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+        body {
+            background-color: #99FFFF; /* Light gray background */
+            font-family: 'Open Sans', sans-serif; /* Use Open Sans for body text */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+        header {
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            padding: 15px; /* Padding around the header */
+            background-color: #003366; /* Dark Blue background for the header */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        header img {
+            width: 50px; /* Set the width of the Bayer logo */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 15px; /* Space between the logo and the title */
+        }
+        header h2 {
+            font-family: 'Roboto', sans-serif; /* Use Roboto font for a professional look */
+            font-weight: 700; /* Bold font weight */
+            color: #ffffff; /* White color for better readability */
+            margin: 0; /* Remove default margin */
+            text-align: center; /* Center text */
+            font-size: 28px; /* Set font size for header */
+        }
+        .random-words {
+            display: flex; /* Use flexbox for layout */
+            flex-wrap: wrap; /* Allow wrapping */
+            justify-content: center; /* Center items */
+            margin: 10px 0; /* Margin above and below the random words section */
+        }
+        .random-word {
+            font-size: 20px; /* Font size for the random words */
+            margin: 5px; /* Margin around each word */
+            padding: 5px; /* Padding inside each word */
+            border-radius: 5px; /* Rounded corners */
+            transition: color 0.3s; /* Transition for color change */
+        }
+        .content-container {
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space between items */
+            align-items: flex-start; /* Align items to the top */
+            margin: 5px; /* Margin above and below the content */
+        }
+        .intro-section {
+            padding: 20px; /* Padding inside the introduction */
+            background: linear-gradient(to top, #0066FF, #00CCFF);
+            color: #fff; /* Dark text color for better readability */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            margin-top: 5px; /* Reduced margin-top to move it down slightly */
+            max-width: 300px; /* Set a maximum width for the box */
+            text-align: left; /* Align text to the left */
+            font-size: 14px;
+        }
+        .core-values-section {
+            padding: 20px; /* Padding inside the core values section */
+            background: linear-gradient(to top, #00CCFF, #99FFFF);
+            color: #606060; /* Dark text color for better readability */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            margin-top: 10px;
+            max-width: 300px; /* Set a maximum width for the box */
+            text-align: left; /* Align text to the left */
+            font-size: 15px;
+        }
+        .category-container {
+            margin-top: 10px; /* Space above explanation */
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Distribute space between items */
+            flex: 1; /* Allow categories to take available space */
+font-size: 15px;
+        }
+        .category-pair {
+            display: flex; /* Flexbox for horizontal layout */
+            flex-direction: column; /* Stack category and explanation vertically */
+            align-items: center; /* Center align items */
+            flex: 1; /* Allow items to grow equally */
+            margin: 20px; /* Margin between boxes */
+        }
+        .category {
+            padding: 20px; /* Increased padding for better spacing */
+            border-radius: 8px;
+            color: white; /* Set text color to white for visibility */
+            text-align: center; /* Center text */
+            cursor: pointer; /* Change cursor to pointer */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+            transition: transform 0.3s; /* Animation for hover effect */
+            height: 130px; /* Set a fixed height for uniformity */
+            width: 100%; /* Make the category box occupy full width */
+            display: flex; /* Use flexbox for centering */
+            flex-direction: column; /* Stack items vertically */
+            justify-content: flex-start; /* Align items to the start */
+        }
+        .category:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+        .machine-automation {
+            background-color: #17a2b8; /* Bright Blue */
+        }
+        .data-visualization {
+            background-color: #0099CC; /* Bright Green */
+        }
+        .digital-solutioning {
+            background-color: #17a2b8; /* Bright Teal */
+        }
+        .explanation {
+            margin-top: 10px; /* Space above explanation */
+            padding: 20px; /* Increased padding for better spacing */
+            border-radius: 8px;
+            background-color: rgba(182, 209, 255, 0.5); /* Light background for explanation */
+            color: #333; /* Dark text color for readability */
+            text-align: center; /* Center text */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+            height: 100px; /* Increased height for explanatory boxes */
+            width: 100%; /* Make the explanation box occupy full width */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+        /* Ensure text color is white for h3 and p tags inside category */
+        .category h3, .category p {
+            color: white; /* Set text color to white */
+        }
+        .team-image {
+            position: absolute; /* Position the icon absolutely */
+            top: 120%; /* Adjust this value to move the icon up or down */
+            left: 10%; /* Center horizontally */
+            width: 1100px;
+            text-align: center; /* Center the image */
+        }
+        .team-image img {
+
+            max-width: 30%; /* Set max width for the team image */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .team-icon {
+            position: absolute; /* Position the icon absolutely */
+            top: 11%; /* Adjust this value to move the icon up or down */
+            left: 23%; /* Center horizontally */
+            transform: translateX(-50%); /* Center the icon */
+            width: 30px; /* Set width for the icon */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='bayer.png') }}" alt="Bayer Logo"> <!-- Bayer Logo -->
+        <h2>TDC SOLUTIONS</h2> <!-- Title centered in the header -->
+    </header>
+    <div class="container-fluid">
+        <div class="random-words">
+            <div class="random-word" style="color: #FF5733;">Precision Applied Science  |</div>
+            <div class="random-word" style="color: #C70039;">&nbsp;Engineering & Design&nbsp;|</div>
+            <div class="random-word" style="color: #900C3F;">&nbsp;Automation & Pipeline&nbsp;|</div>
+            <div class="random-word" style="color: #581845;">&nbsp;Techno Solutioning & Innovation&nbsp;|</div>
+            </div>
+        <div class="content-container">
+            <!-- Left About Our Team Section -->
+            <div class="intro-section">
+                <h3><b>About Our Team</b></h3>
+                <p>We are a specialized team that encourages dynamic collaboration and cross-pollination of ideas across divisions within Bayer. <br><I>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Utilizing our specialized expertise, cutting-edge facility, and vast experience, we create proprietary innovations from laboratory to field.</I></p>
+                <p>We invent solutions that enable our researchers and engineers to make critical, data-driven decisions.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>--Empowered by a hands-on, “Succeed or fail fast” approach, our agile team generates leading-edge discoveries that pioneer the future of agriculture and healthcare.</I></p>
+                <p>Leveraging science and technology, we create new possibilities to advance research.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><I>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Our mission is to support Bayer’s vision of achieving “Health for all, hunger for none.”</I></p>
+            </div>
+
+            <!-- Center Category Section -->
+            <div class="category-container">
+                <div class="category-pair">
+                    <div class="category machine-automation">
+                       <a href="/machine_automation"><!-- Link to the Machine Automation page -->
+                        <h3>Machine Automation</h3>
+                        <p>Explore our automation solutions for machines.</p>
+                      </a>
+                    </div>
+                    <div class="explanation">
+                        <p>Machine automation increases efficiency, reduces human error, and enhances productivity in manufacturing processes.</p>
+                    </div>
+                </div>
+                <div class="category-pair">
+                    <div class="category data-visualization">
+                        <h3>Data Visualization</h3>
+                        <p>Transform your data into insightful visuals.</p>
+                    </div>
+                    <div class="explanation">
+                        <p>Data visualization helps in making complex data more accessible, understandable, and usable, facilitating better decision-making.</p>
+                    </div>
+                </div>
+                <div class="category-pair">
+                    <a href="/tdc_techno_solutioning" class="category digital-solutioning"> <!-- Link to TDC Techno Solutioning page -->
+                        <h3>Digital Solutioning</h3>
+                        <p>Innovative digital solutions for your business.</p>
+                    </a>
+                    <div class="explanation">
+                        <p>Digital solutioning enhances operational efficiencies, improves customer engagement, and drives innovation in your business.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Our Core Values Section -->
+            <div class="core-values-section">
+                <h3><b>Our Core Values</b></h3>
+                <p><b>INNOVATIVE </b>- Advancing ideas from concept to outcome.</p>
+                <p><b>TRUSTED</b> - Generating reliable data and solutions to impact decisions.</p>
+                <p><b>CURIOUS</b> - Fostering collaboration for unique solutions.</p>
+                <p><b>COLLABORATIVE</b> - Uniting diverse talent for cutting-edge research technology.</p>
+                <p><b>IMPACTFUL </b>- Using data for swift, efficient responses to emerging needs.</p>
+            </div>
+        </div>
+
+        <!-- Team Image Section -->
+        <div class="team-image">
+            <img src="{{ url_for('static', filename='team.png') }}" alt="Our Team" style="max-width: 60%; height: auto;">
+            <img src="{{ url_for('static', filename='teamicon.png') }}" alt="Team Icon" class="team-icon">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGITAL SOLUTIONING</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> <!-- Add Roboto Font -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #BEBEBE; /* Light gray background */
+            font-family: 'Lato', sans-serif; /* Use Lato font */
+        }
+
+        header {
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            padding: 10px; /* Padding around the header */
+            background-color: #0033FF; /* Blue background for the header */
+            border-bottom: 1px solid #dee2e6; /* Bottom border for separation */
+            position: relative; /* Enable absolute positioning for the home link */
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Roboto', sans-serif; /* Use Roboto font for the title */
+            margin: 0; /* Remove default margin */
+            color: #ffffff; /* White color for the title */
+            font-weight: 600; /* Bold font weight for the title */
+	    font-size: 30px;
+            flex: 1; /* Allow the title to take available space */
+        }
+
+        .home-link {
+            position: absolute; /* Position the home link absolutely */
+            left: 20px; /* Move it 20px from the left */
+            top: 50%; /* Center it vertically */
+            transform: translateY(-50%); /* Adjust for vertical centering */
+        }
+
+        .home-link img {
+            width: 30px; /* Set the width of the image */
+            height: auto; /* Maintain aspect ratio */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .category-container {
+            display: flex; /* Use flexbox for layout */
+            flex-wrap: wrap; /* Allow wrapping of items */
+            justify-content: space-between; /* Distribute space between items */
+            margin-top: 20px; /* Space above category container */
+        }
+
+        .category {
+            flex: 1 0 30%; /* Grow and shrink, with a base width of 30% */
+            margin: 15px; /* Margin between boxes */
+            padding: 20px; /* Increased padding for better spacing */
+            border-radius: 5px;
+            color: white; /* Text color for the categories */
+            transition: transform 0.3s; /* Animation for hover effect */
+            cursor: pointer; /* Change cursor to pointer */
+            min-height: 200px; /* Set a minimum height for uniformity */
+            display: flex; /* Use flexbox to align content */
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center; /* Center content vertically */
+            text-align: center; /* Center text */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+        }
+
+        .category:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .cloud-solutioning {
+            background-color: #007bff; /* Blue */
+        }
+
+        .software-automation {
+            background-color: #28a745; /* Green */
+        }
+
+        .physical-and-virtual-server-migration {
+            background-color: #fd7e14; /* Orange */
+        }
+
+        .chatbot-implementation {
+            background-color: #17a2b8; /* Teal */
+        }
+
+        .search-engine-development {
+            background-color: #6f42c1; /* Purple */
+        }
+
+        .realtime-lab-machine-network-monitoring {
+            background-color: #0056b3; /* Dark Blue */
+        }
+
+        /* Ensure text color is white for h3 and p tags inside category */
+        .category a {
+            color: white; /* Set link color to white */
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        .category a:hover {
+            text-decoration: underline; /* Underline on hover for links */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="home-link">
+            <a href="/"><img src="{{ url_for('static', filename='house.png') }}" alt="Return to Home"></a> <!-- Link to the homepage using local image -->
+        </div>
+        <h1>DIGITAL SOLUTIONING</h1>
+    </header>
+    <div class="container">
+        <div class="category-container">
+            <a href="https://bayersi.service-now.com/sp?sys_kb_id=82f805bf1b76bd5016acebd3b24bcb87&id=kb_article_view&sysparm_rank=1&sysparm_tsqueryId=16068aacc31a9ed004c7d1aa050131a7" target="_blank" class="category cloud-solutioning"> <!-- Link to the external URL -->
+                <h3>Cloud Solutioning</h3>
+                <p>Providing scalable cloud infrastructure solutions.</p>
+            </a>
+            <div class="category software-automation">
+                <h3>Software Automation</h3>
+                <p>Automating repetitive tasks for efficiency.</p>
+            </div>
+            <div class="category physical-and-virtual-server-migration">
+                <a href="{{ url_for('static', filename='P2V.pdf') }}" target="_blank"> <!-- Link to the PDF -->
+                    <h3>Physical and Virtual Server Migration</h3>
+                    <p>Seamless migration of servers to new environments.</p>
+                </a>
+            </div>
+            <div class="category chatbot-implementation" data-toggle="modal" data-target="#chatbotModal">
+                <h3>ChatBot Implementation</h3>
+                <p>Implementing AI-powered chat solutions.</p>
+            </div>
+            <div class="category search-engine-development">
+                <a href="https://tdc.bayer.cnb/bayerdesignsearchengine/login" target="_blank"> <!-- Link to the external URL -->
+                    <h3>Search Engine Development</h3>
+                    <p>Building effective search functionalities.</p>
+                </a>
+            </div>
+            <div class="category realtime-lab-machine-network-monitoring">
+                <a href="https://tdc.bayer.cnb//TDC_WorkShop_Device/Dashboard.html" target="_blank"> <!-- Link to the external URL -->
+                    <h3>Realtime Lab Machine Network Monitoring</h3>
+                    <p>Monitoring lab machines for real-time performance.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for ChatBot PDF -->
+    <div class="modal fade" id="chatbotModal" tabindex="-1" role="dialog" aria-labelledby="chatbotModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="chatbotModalLabel">ChatBot Implementation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="{{ url_for('static', filename='chatbot.pdf') }}" width="100%" height="500px"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
